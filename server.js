@@ -4,7 +4,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    res.send('iniciando server express');
+    res.send('renombrando carpeta github');
 });
 
 
