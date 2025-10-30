@@ -8,9 +8,7 @@ class ServicioNumeros {
 
     async obtenerNumeros () {
         let nros = await this.nrosMem.obtenerNumeros()
-        return {
-            numeros:{nros}
-        }
+        return nros
     }
 
     async obtenerPromedio () {
@@ -48,9 +46,13 @@ class ServicioNumeros {
         }
     }
 
-    async guardarNumero (nro) {
-        return await this.nrosMem.guardarNumero(nro)
-    }
+    async guardarNumero(nro) {
+        const nroParse = parseInt(nro)
+        if (isNaN(nroParse)) throw new Error('Valor no numérico')
+        await this.nrosMem.guardarNumero(nroParse) 
+        
+        return nroParse
+}
 }
 
 export default ServicioNumeros

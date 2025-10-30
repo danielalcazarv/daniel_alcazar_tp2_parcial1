@@ -10,11 +10,11 @@ class RouterNumeros {
     }
 
     start() {
-        this.router.get('/entrada', this.controladorNumeros.obtenerNumeros())
-        this.router.get('/promedio', this.controladorNumeros.obtenerPromedio())
-        this.router.get('/minmax', this.controladorNumeros.obtenerMinMax())
-        this.router.get('/cantidad', this.controladorNumeros.obtenerCantidad())
-        this.router.post('/', this.controladorNumeros.guardarNumero())
+        this.router.get('/entrada', this.controladorNumeros.obtenerNumeros)
+        this.router.get('/promedio', this.controladorNumeros.obtenerPromedio)
+        this.router.get('/minmax', this.controladorNumeros.obtenerMinMax)
+        this.router.get('/cantidad', this.controladorNumeros.obtenerCantidad)
+        this.router.post('/', this.controladorNumeros.guardarNumero)
 
         return this.router
     }

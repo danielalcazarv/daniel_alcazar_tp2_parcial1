@@ -10,7 +10,7 @@ class ControladorNumeros {
         try {
             const nros = await this.serviciosNumeros.obtenerNumeros()
 
-            res.json(nros)
+            res.json({ numeros: nros })
         } catch (error) {
             console.log('error obtenerNumeros', error)
         }
@@ -48,8 +48,11 @@ class ControladorNumeros {
 
     guardarNumero = async (req, res) => {
         try {
-            let nro = req.body
-            let nroGuardado = await this.serviciosNumeros.guardarNumero(nro)
+            const { numero } = req.body
+            if (numero == undefined) {
+                
+            }
+            let nroGuardado = await this.serviciosNumeros.guardarNumero(numero)
 
             res.json(nroGuardado)
         } catch (error) {
