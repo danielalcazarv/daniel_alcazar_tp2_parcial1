@@ -13,6 +13,7 @@ class ControladorNumeros {
             res.json({ numeros: nros })
         } catch (error) {
             console.log('error obtenerNumeros', error)
+            res.status(500).json({ error: error.message })
         }
     }
 
@@ -23,6 +24,7 @@ class ControladorNumeros {
             res.json(prom)
         } catch (error) {
             console.log('error obtenerPromedio', error)
+            res.status(500).json({ error: error.message })
         }
     }
 
@@ -33,6 +35,7 @@ class ControladorNumeros {
             res.json({minMax})
         } catch (error) {
             console.log('error obtenerMinMax', error)
+            res.status(500).json({ error: error.message })
         }
     }
 
@@ -43,6 +46,7 @@ class ControladorNumeros {
             res.json({cant})
         } catch (error) {
             console.log('error obtenerCantidad', error)
+            res.status(500).json({ error: error.message })
         }
     }
 
@@ -57,6 +61,7 @@ class ControladorNumeros {
             res.json(nroGuardado)
         } catch (error) {
             console.log('error guardarNumero', error)
+            res.status(500).json({ error: error.message })
         }
     }
 }
